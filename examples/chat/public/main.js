@@ -170,8 +170,15 @@ $(function() {
   }
 
   // Gets the 'X is typing' messages of a user
-  const getTypingMessages = (data) => {
-    return $('.typing.message').filter(i => {
+  // const getTypingMessages = (data) => {
+  //   return $('.typing.message').filter(i => {
+  //     return $(this).data('username') === data.username;
+  //   });
+  // }
+  // fadeOut problem in 'is typing' solved
+  function getTypingMessages (data) {
+    return $('.typing.message').filter(function (i) {
+      console.log($(this).data('username'), data.username)
       return $(this).data('username') === data.username;
     });
   }
